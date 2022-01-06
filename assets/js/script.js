@@ -20,19 +20,24 @@ setInterval(getDate,1)
 // var fourPMEl = $('#4pm');
 // var fivePMEl = $('#5pm');
 
-// var timeArray = [8,9,10,11,12,13,14,15,16,17]
-// var timeblockArray = [eigthAMEl,nineAMEl,tenAMEl,elevenAMEl,twelvePMEl,onePMEl,twoPMEl,threePMEl,fourPMEl,fivePMEl] 
 
+var timeblockArray = [$('#8am'),$('#9am'),$('#10am'),$('#11am'),$('#12pm'),$('#1pm'),$('#2pm'),$('#3pm'),$('#4pm'),$('#5pm')] 
+
+timeblockColor()
 function timeblockColor() {
     var timeArray = [8,9,10,11,12,13,14,15,16,17]
     var currentTime = Number(moment().format('HH'));
     console.log("Current Hour is " + currentTime);
 
-    // for(var i = 0; i < timeArray.length; i++) {
-    //     if (currentTime < timeArray[i]) {
-    //         timeblockArray[i]
-    //     }
-    // }
+    for(var i = 0; i < timeArray.length; i++) {
+        if (currentTime < timeArray[i]) {
+            timeblockArray[i].addClass('future')
+        } else if (currentTime == timeArray[i]) {
+            timeblockArray[i].addClass('present')
+        } else if (currentTime > timeArray[i]) {
+            timeblockArray[i].addClass('past')
+        }
+    }
 
 
     //if "currentTime" is < "scheduledTime"
