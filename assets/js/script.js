@@ -22,7 +22,12 @@ function timeblockColor() {
     //then change class to "present"
     //if "currentTime" is > "scheduledTime"
     //then chnage class to "past"
-
-
-
 }
+
+//save button
+
+$('.container').on('click','.saveBtn', function(event) {
+    console.log("click");
+    console.log(typeof(event.target))
+    console.log(this.siblings("input"));
+})
