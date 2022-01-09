@@ -28,10 +28,10 @@ setInterval(timeblockColor(),1000)  //will update color when hour changes withou
 // var savedEvents = ["","","","","","","","","",""]
 
 //save button
-$('.container').on('click','.saveBtn', function(event) {
+$('.container').on('click','.save', function(event) {
     console.log($(event.target))
-    var index = $(event.target).siblings("[data-index]").attr("data-index")
-    var userInput = $(event.target).siblings("[data-index]").val()
+    var index = $(event.target).parents().siblings("input").attr("data-index")
+    var userInput = $(event.target).parents().siblings("input").val()
     console.log(userInput)
     console.log(index)
     savedEvents.splice(index, 1, userInput)
