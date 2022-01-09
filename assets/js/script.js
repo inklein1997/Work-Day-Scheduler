@@ -46,7 +46,7 @@ function renderSavedEvents() {
     for (var i = 0; i<savedEvents.length; i++) {
         var event = savedEvents[i];
         console.log(event)
-        $('#container').children().eq(i).children('input').attr('value', event)
+        $('.container').children().eq(i).children('input').attr('value', event)
        
     }
 }
