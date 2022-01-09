@@ -25,11 +25,28 @@ function timeblockColor() {
 }
 setInterval(timeblockColor(),1000)  //will update color when hour changes without having to refresh
 
+// var savedEvents = ["","","","","","","","","",""]
+
 //save button
 $('.container').on('click','.saveBtn', function(event) {
-    console.log("click");
-    console.log(typeof(event.target))
-    localStorage.setItem("event", $(event.target).siblings("input").val());
+    console.log($(event.target))
+    var index = $(event.target).siblings("[data-index]").attr("data-index")
+    var userInput = $(event.target).siblings("[data-index]").val()
+    console.log(userInput)
+    console.log(index)
+    savedEvents.splice(index, 1, userInput)
+    console.log(savedEvents)
+    localStorage.setItem("savedEvents", JSON.stringify(savedEvents))
 })
-var savedBlanks = ["","","","","","","","","",""]
-localStorage.getItem("event")
+var savedEvents = JSON.parse(localStorage.getItem("savedEvents")) || ["","","","","","","","","",""]
+console.log(savedEvents)
+
+renderSavedEvents()
+function renderSavedEvents() {
+    for (var i = 0; i<savedEvents.length; i++) {
+        var event = savedEvents[i];
+        console.log(event)
+        $('#container').children().eq(i).children('input').attr('value', event)
+       
+    }
+}
