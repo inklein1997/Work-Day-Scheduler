@@ -5,6 +5,7 @@
 - [Technologies](##Technologies)
 - [Links](##Links)
 - [Screenshot of Application](Screenshot-of-Application)
+- [User Instructions](##User-Instructions)
 - [Acknowledgements](##Acknowledgements)
 
 ## Project Goal
@@ -23,6 +24,13 @@ The goals for this project include the following:
 - ### [URL to Github Repository](https://github.com/inklein1997/Work-Day-Scheduler)
 
 ## Screenshot of Webpage
-![alt](./assets/images/...)
+![alt](./assets/images/screenshot-of-application.png)
+
+## User Instructions
+1. **Click** text box and **Type** in event. <br>
+![User types event into input box](./assets/images/step1.jpg)
+2. **Click Save Icon** to save event into local Storage. <br>
+![User clicks save icon to save event](./assets/images/step2.jpg)
 
 ## Acknowledgements
+- Header and CSS file were provided by the University of Texas at Austin Coding Bootcamp curriculum
